@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no,width=device-width">
+  <title>Bone Voyage</title>
+  <link href="bone-voyage.css" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" href="/sprites/icon.png">
+
+  <!-- Pixel font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- START MENU -->
+  <div id="start-menu">
+    <div class="menu-box">
+
+      <h1>Bone Voyage</h1>
+
+      <div class="menu-section">
+        <h3>Controls</h3>
+        <p>
+          ← or A : Move Left<br>
+          → or D : Move Right<br>
+          ↑ or Space : Jump
+        </p>
+      </div>
+
+      <div class="menu-section">
+        <h3>Goal</h3>
+        <p>Collect all 7 bones.</p>
+      </div>
+
+      <div class="menu-section">
+        <h3>Warning</h3>
+        <p>You cannot return to previous stages.</p>
+      </div>
+
+      <div class="menu-section">
+        <h3>Select Mode</h3>
+
+        <div class="mode-buttons">
+          <button class="mode-btn selected" data-sprite="original sprite/Normal.png">
+            Normal
+          </button>
+
+          <button class="mode-btn" data-sprite="sprites/Protanopia.png">
+            Protanopia
+          </button>
+
+          <button class="mode-btn" data-sprite="sprites/Deuteranopia.png">
+            Deuteranopia
+          </button>
+
+          <button class="mode-btn" data-sprite="sprites/Tritanopia.png">
+            Tritanopia
+          </button>
+        </div>
+      </div>
+
+      <button id="start-game-btn">Start Game</button>
+
+    </div>
+  </div>
+
+  <!-- HELP BUTTON -->
+  <button data-modal-target="#modal" id="openbtn">?</button>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Game Info</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+
+      <strong>Controls</strong><br><br>
+
+      Move Left: ← or A<br>
+      Move Right: → or D<br>
+      Jump: ↑ or Space
+      <br><br>
+
+      <strong>Goal:</strong><br><br>
+      Collect all 7 bones to win.
+      <br><br>
+
+      <strong>Warning</strong><br><br>
+      Once you leave a stage,<br>
+      you cannot go back.
+      <br><br>
+
+      <button id="restart-button" onclick="location.reload()">
+        Restart Game
+      </button>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
+  <canvas></canvas>
+
+  <!-- LOAD FILES IN ORDER -->
+  <script src="Game/controller.js"></script>
+  <script src="Game//display.js"></script>
+  <script src="Game//engine.js"></script>
+  <script src="Game//game.js"></script>
+  <script src="Game//main.js"></script>
+  <script src="popUp.js"></script>
+
+</body>
+
+</html>
